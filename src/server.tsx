@@ -1,6 +1,6 @@
-import { AboutPage } from "./components/AboutPage";
-import { CurrentTime } from "./components/CurrentTime";
-import { HomePage } from "./components/HomePage";
+//import { AboutPage } from "./components/AboutPage";
+//import { HomePage } from "./components/HomePage";
+//import { CurrentTime } from "./components/CurrentTime";
 import { html, serve_static } from "./response";
 
 // Configuration
@@ -19,9 +19,9 @@ export function start() {
       const url = new URL(req.url);
 
       // Handle routes
-      if (url.pathname === "/") return html(<HomePage />);
-      if (url.pathname === "/about") return html(<AboutPage />);
-      if (url.pathname === "/time") return html(<CurrentTime />);
+      if (url.pathname === "/") return html(<p>Homepage :)</p>);
+      //if (url.pathname === "/about") return html(<AboutPage />);
+      //if (url.pathname === "/time") return html(<CurrentTime />);
 
       // Fallback to serving static files
       return serve_static("public", req);

@@ -2,7 +2,7 @@
  * Helpers for returning HTTP Responses.
  */
 import { ReactElement } from "react";
-import { NotFoundPage } from "./components/NotFoundPage";
+//import { NotFoundPage } from "./components/NotFoundPage";
 import { renderToString } from "react-dom/server";
 
 /**
@@ -14,7 +14,7 @@ export function serve_static(static_dir: string, req: Request): Response {
   const file = Bun.file(`${static_dir}${url.pathname}`);
   if (file.size === 0) {
     console.log(`[static]: no file found: ${req.method}: ${req.url}`);
-    return html(<NotFoundPage />, 404);
+    return html(<p>File not found :(</p>, 404);
   }
   return new Response(file);
 }
